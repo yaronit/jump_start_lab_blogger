@@ -1,0 +1,21 @@
+<%= form_for @article do |f| %>
+	 <% @article.errors.full_messages.each do |error| %>
+    <li><%= error %></li>
+  <% end %>
+		
+	<!-- form_for @object, html: { multipart: true }, do |f| -->
+	<!-- form_for @object, html: { class: "classname" }, do |f| -->
+
+	<p>
+		<%= f.label :title%> <br>
+		<%= f.text_field :title%>
+	</p>
+	<p>
+		<%= f.label :body%> <br>
+		<%= f.text_field :body%>
+	</p>
+	<p>
+
+		<%= f.submit "Submit", :disable_with => 'Submiting...'%> 
+	</p>
+<% end %>
